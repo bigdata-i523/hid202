@@ -8,7 +8,6 @@
 
 # Practice
 
-* 08/24/17 Bought Raspberry PI
 * 08/25/17 Enabled Python 2 and 3 via pyenv on OSX
 
 # Writing
