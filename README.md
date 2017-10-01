@@ -25,6 +25,7 @@ paper1:
    url: https://github.com/bigdata-i523/hid202/paper1/paper1.pdf
    type: latex
    status: in progress
+   chapter: Environment
 ```
    
 # Paper 2
