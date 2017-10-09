@@ -40,7 +40,7 @@ paper2:
    abstract: This paper showcases this and that and the other in regards to abc
    url: https://github.com/bigdata-i523/hid202/paper2/paper2.pdf   
    type: latex
-   status: in progress
+   status: 100%
 ```
 
 # Project 
