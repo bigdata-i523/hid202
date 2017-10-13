@@ -24,7 +24,7 @@ paper1:
    abstract: This paper will cover how big data can be useful in weather forecasting.
    url: https://github.com/bigdata-i523/hid202/paper1/paper1.pdf
    type: latex
-   status: 100%
+   status: 100% Oct-13-17
    chapter: Environment
 ```
    
