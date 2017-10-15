@@ -1,0 +1,36 @@
+---
+owner:
+    hid: 202
+    name: Himani Bhatt
+    url: https://github.com/bigdata-i523/hid202
+paper1:
+    abstract: This paper will cover how big data can be useful in weather forecasting.
+    author:
+        - Himani Bhatt
+    chapter: Environment
+    hid:
+        - 202
+    status: 70% Not compilable
+    title: Big data analytics in Weather forecasting
+    type: latex
+    url: https://github.com/bigdata-i523/hid202/paper1/paper1.pdf
+paper2:
+    abstract: This paper showcases this and that and the other in regards to abc
+    author:
+        - Himani Bhatt
+    hid:
+        - 202
+    status: in progress
+    title: This is my paper about the other abc
+    type: latex
+    url: https://github.com/bigdata-i523/hid202/paper2/paper2.pdf
+project:
+    abstract: This paper showcases tis and that and the other
+    author:
+        - Himani Bhatt
+    pid:
+        - 202
+    status: in progress
+    title: Benchmarking a BigData Docker deployment
+    type: latex
+    url: https://github.com/bigdata-i523/hid202/project/report.pdf
