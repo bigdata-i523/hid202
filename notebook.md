@@ -15,3 +15,5 @@
 
 * 09/15/17 Installed and Learned jabref
 * 09/18/17 Installed and Learned Latex
+* 10/08/17 Completed paper 1
+* 09/14/17 Started working on paper 2.
