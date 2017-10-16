@@ -15,7 +15,7 @@ paper1:
     type: latex
     url: https://github.com/bigdata-i523/hid202/paper1/paper1.pdf
 paper2:
-    abstract: This paper showcases this and that and the other in regards to abc
+    abstract: This paper showcases this and that and the other in regards to abc.
     author:
         - Himani Bhatt
     hid:
@@ -25,12 +25,12 @@ paper2:
     type: latex
     url: https://github.com/bigdata-i523/hid202/paper2/paper2.pdf
 project:
-    abstract: This paper showcases tis and that and the other
+    abstract: NA
     author:
         - Himani Bhatt
     pid:
         - 202
     status: in progress
-    title: Benchmarking a BigData Docker deployment
+    title: NA
     type: latex
     url: https://github.com/bigdata-i523/hid202/project/report.pdf
