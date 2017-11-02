@@ -4,13 +4,19 @@ owner:
     name: Himani Bhatt
     url: https://github.com/bigdata-i523/hid202
 paper1:
-    abstract: Daily over 20 terabytes of data get generated  of different key weather-related parameters like wind speeds,
-              temperature readings , satellite images, barometric pressure from different locations. Yet the extreme weather 
-              events cause huge amount of loss and damage worldwide. For instance, 90 percent of the crop losses are due to
-              weather calamities all over the world. The ability to better predict the weather could slash this by up to 25 percent.
-              The ability to use the big data generated efficiently directly affects the chances to reduce economic loss, 
-              environmental damage and fatality.  This can be considered as the best motivation to improve and invest in this
-              extremely challenging task.
+    abstract: >
+        Daily over 20 terabytes of data get generated of different key
+        weather-related parameters like wind speeds, temperature
+        readings , satellite images, barometric pressure from
+        different locations. Yet the extreme weather events cause huge
+        amount of loss and damage worldwide. For instance, 90 percent
+        of the crop losses are due to weather calamities all over the
+        world. The ability to better predict the weather could slash
+        this by up to 25 percent.  The ability to use the big data
+        generated efficiently directly affects the chances to reduce
+        economic loss, environmental damage and fatality.  This can be
+        considered as the best motivation to improve and invest in
+        this extremely challenging task.
     author:
         - Himani Bhatt
     chapter: Environment
