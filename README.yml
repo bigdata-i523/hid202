@@ -29,7 +29,15 @@ paper1:
 paper2:
     review: Nov 6 2017
     abstract: >
-              Data Visualization is the term used for knowing the visual context of data in order to understand its significance. How to unravel the strands of big data to pick out the relevant parts. If we have multiple sources of data how do we know where to look. Data visualization is the solution to all these questions. It helps to convert information into knowledge. Businesses are using big data in order to better understand their customers and to optimize their business processes. In order to find the meaning, tell the story and sharing the story, visualization is needed where data meets design.
+              Data Visualization is the term used for knowing the visual context
+              of data in order to understand its significance. How to unravel the
+              strands of big data to pick out the relevant parts. If we have multiple
+              sources of data how do we know where to look. Data visualization is 
+              the solution to all these questions. It helps to convert information
+              into knowledge. Businesses are using big data in order to better 
+              understand their customers and to optimize their business processes. 
+              In order to find the meaning, tell the story and sharing the story, 
+              visualization is needed where data meets design.
     author:
         - Himani Bhatt
     hid:
