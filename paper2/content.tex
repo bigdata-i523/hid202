@@ -185,7 +185,41 @@ Simple form of data visualization include graphs, pi charts, histograms, scatter
 \end{table}
 
 
-\section{Data Visualization Tools}
+\section{Data Visualization tools used by Data Scientists}
+
+There are some excellent open source data visualization tools available that can be used by everyone. All we need to do is to create an account, import the data (in the form of .csv file, Google Sheet etc. and make or pick our own visualizations. Some of them are :
+
+\subsection*{D3.js}
+
+D3.js is a javascript library written by Mike Bostock and is used to create custom visualizations on the web and is open source. It takes advantage of already established web technologies like canvas, SVG. With the advancements in browser technology, it is now possible to render complex visualizations on variety of devices. The setup of machines involves 3 steps - Text Editor, Browser and a Web Server (which will be used to deliver content over the internet). For using D3.js some basic web development skill is required that include knowledge of HTML, CSS, JavaScript and SVG.
+D3.js can be used to make visualizations loaded with animations and interactivity. D3 is often used with Crossfilter for quick data manipulation of big data. But since it has tools for manipulating and laying out data in pure javascript, it naturally limits what we can do with javascript in memory (in the browser or in node) \cite{D3}.\\
+
+
+\subsection*{Google Data Studio}
+
+Data Studio which is an open source tool can be used to create meaningful, shareable visualizations with few clicks. It provides - visual editor to create reports and dashboards, rich library of vizualizations, fully custom design and style controls, reusable templates, dynamic and interactive report controls based on various dimensions available in data, and seamless integration between data analysis and reporting. But Google's Data Studio visualization toolset focuses primarily on connecting up data from Google sources, such as Google Analytics, Google AdWords, Google Sheets, and BigQuery. However it will soon roll out connectors for SQL databases. We can even import big data like facebook data, but the information need to be present in Google Sheet so that it can be pulled into a Google Data Studio \cite{Google}. \\
+
+\subsection*{Microsoft Excel Power Tools}
+
+Latest version of Excel has excellent range of power tools that can be used to analyze and visualize business data. Power Pivot can import and manage millions of data rows for multiple sources. Power Query is another data analysis power tool that can be used for extracting data from a massive range of data sources, to clean and transform that data, that uses the inbuilt JSON parser to build massive data visualizations over Big Data analysis. Power View is an interactive visualization tool used to provide a drag-and-drop interface for rapid model building. It allows updating visualizations on-the-fly and shows data hierarchies allowing to drill down through data. Power Map enables us to plot and visualize data in  three-dimensions. It can plot millions of rows of data across a three-dimensional map, using data taken directly from a table, or using a data model \cite{Excel}.
+
+\subsection*{MATLAB}
+
+The latest version of MATLAB, the numeric computing environment and fourth-generation language, offers new capabilities that allow for the analysis of big data. MATLAB now has built-in MapReduce functionality to allow for analysis of data sets that are too big to fit in memory. Algorithms can be developed on a desktop and then executed on a Hadoop cluster. MATLAB includes all the graphics features required to visualize engineering and scientific data, which includes 2D plots as well as 3D plots. There are functions for plotting topological data, an image data, for 3D volume visualization, for producing animations, and for plotting 3D objects. Sound can also be visualized using MATLAB \cite{MATLAB}.
+
+\subsection*{Mathematica}
+
+Mathematica is used to make high quality automated data visualization with the help of unified architecture. It provides static and dynamic visualization that scales from immediate one-off projects to fully automated industrial-scale production systems. It	offers a powerful suite	of data	analysis and data mining packages, along with a	very rich data visualization framework for its users. Mathematica has its own graphics language,	with which graphics	primitives can be interactively	rendered inside	the	worksheet. This makes Mathematica’s	capability similar to many widely used visualization languages.	Mathematica	provides a plethora	of functions to	combine	these primitives and make them interactive. Along with basic plots, it can be used for time series and scientific visualization, statistic and text visualization, map visualization \cite{Mathematica}.\\
+
+\subsection*{R Programming Language }
+
+R has built in functions and libraries to build visualizations and present data. Charts like scatter plot, histogram, Bar and stack bar chart, box plot, area chart, heat map, correlogram can be made using the library ggplot2. Package heatmaply is used for easily creating interactive cluster heatmaps that can be shared online as a stand-alone HTML file. R package named iplots enhances the interactivity of the graphs. This package provides interactive mosaic plots, bar plots, box plots, parallel plots, scatter plots, and histograms that can be linked together and color brushed. The major advantage of using these is R can be used by anyone and is open source \cite{R}.
+
+\subsection*{Python}
+
+Python comes with a wide range of prebuilt libraries focused on big data processing, visualization, and other data manipulations. Python has multiple libraries that can be practically used for every data visualization need. Matplotlib is a top-notch piece of software which is making Python (with some help of NumPy, SciPy, and Pandas) a cognizant competitor to such scientific tools as MatLab or Mathematica. It can be used to make line plot, scatter plot, bar chart, pie chart, stem plot, contour plot, quiver plots, spectograms. Another library Seaborn is mostly focused on the visualization of statistical models; such visualizations include heat maps, those that summarize the data but still depict the overall distributions. Seaborn is based on Matplotlib and highly dependent on that. Bokeh is another library which is aimed at interactive visualizations and is independent of Matplotlib. Also it makes its presentation via modern browsers in the style of Data-Driven Documents (d3.js). The library Plotly is rather a web-based toolbox for building visualizations, exposing APIs to some programming languages (Python among them). In order to use Plotly, you will need to set up your API key \cite{Python}. 
+
+\section{Commercial Data Visualization Tools}
 
 Visualization solutions are rapidly evolving. Some of the most popular and innovative data visualization tools are : 
 \subsection*{Tableau}
