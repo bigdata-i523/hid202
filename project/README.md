@@ -25,8 +25,8 @@ You need to have Python 2 installed alongwith jupyter notebook.Other things you 
 # Data 
 
 Data used in this project can be found in;
-* [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/machine-learning-databases/00352/)
--Data has also been uploaded in the google drive as data.csv. While running the notebook, change the path of the data accordingly in the pd.read_csv command.
+* [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/machine-learning-databases/00352/).
+Data has also been uploaded in the google drive as data.csv. While running the notebook, change the path of the data accordingly in the pd.read_csv command.
 
 # Authors
 
