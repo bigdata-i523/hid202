@@ -1,4 +1,4 @@
-#Project Title
+# Project Title
 
 Big Data Analytics in E-commerce
 
@@ -24,7 +24,7 @@ Things you need to install in your local computer are given below. These are fur
 # Data 
 
 Data used in this project can be found in;
-* [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/machine-learning-databases/00352/Online Retail.xlsx)
+* [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/machine-learning-databases/00352/)
 
 # Authors
 
@@ -34,4 +34,4 @@ HID 202 , HID 205
 
 # Acknowledgments
 
-* The author would like to thank Dr. Gregor von Laszewski and TA's for their support and suggestions to write this project.
+The authors would like to thank Dr. Gregor von Laszewski and TA's for their support and suggestions to write this project.
