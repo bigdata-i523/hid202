@@ -11,7 +11,7 @@ Jupyter notebook and Python 2 is used for the implementation.
 
 # Prerequisites
 
-Things you need to install in your local computer are given below. These are further included in the report under installation steps.
+You need to have Python 2 installed alongwith jupyter notebook.Other things you need to install in your local computer are given below. These are further described in the report under installation steps.
 
 ```
 - [NumPy](http://www.numpy.org/)
