@@ -48,12 +48,27 @@ paper2:
     type: latex
     url: https://github.com/bigdata-i523/hid202/paper2/paper2.pdf
 project:
-    abstract: NA
+    abstract: >
+              Humongous amounts of data gets generated every day in the domain of e-commerce industry. 
+              With the increasing competition and ever-changing market trends, it is a challenging task 
+              for the store owners to strategize business and marketing activities. If the companies are 
+              able to predict customer behavior, they can come up with business designs which can help them
+              in making predictions about the customer purchasing patterns and thereby increase their revenue.
+              In this project we have aimed to do analysis on the data of an e-commerce non-store online retail
+              giant based in UK. The dataset, available in the UC Irvine repository by the name of `Online Retail', 
+              consists of the the goods purchased by different customers at a given time. Through this data
+              available to us, we have done customer segmentation on the basis of the type and amount of goods
+              purchased by a customer. We achieved this by doing a thorough exploration of the data, data 
+              pre-processing and then running different Machine Learning Classifiers to classify the customers
+              in different categories.
+
     author:
         - Himani Bhatt
+        - Mrunal Chaudhary 
     hid:
-        - 202
-    status: in progress
-    title: NA
-    type: latex
+        - 202 
+        - 205
+    status: Dec 04 17 100%
+    title: Big Data Analysis in E-Commerce
+    type: Project
     url: https://github.com/bigdata-i523/hid202/project/report.pdf
