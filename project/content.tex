@@ -1,0 +1,505 @@
+
+
+%\input{format/i523}
+
+
+
+\title{Big Data Analytics in E-Commerce}
+
+
+\author{Himani Bhatt, Mrunal L Chaudhary}
+\affiliation{%
+  \institution{Indiana University}
+  \city{Bloomington} 
+  \state{Indiana} 
+}
+\email{himbhatt@iu.edu, mchaudh@iu.edu}
+
+
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{H. Bhatt, Mrual C.}
+
+\begin{abstract}
+Humongous amounts of data gets generated every day in the domain of e-commerce industry. With the increasing competition and ever-changing market trends, it is a challenging task for the store owners to strategize business and marketing activities. If the companies are able to predict customer behavior, they can come up with business designs which can help them in making predictions about the customer purchasing patterns and thereby increase their revenue. In this project we have aimed to do analysis on the data of an e-commerce non-store online retail giant based in UK. The dataset, available in the UC Irvine repository by the name of `Online Retail', consists of the the goods purchased by different customers at a given time. Through this data available to us, we have done customer segmentation on the basis of the type and amount of goods purchased by a customer. We achieved this by doing a thorough exploration of the data, data pre-processing and then running different Machine Learning Classifiers to classify the customers in different categories.
+
+\end{abstract}
+
+
+\keywords{ HID $202$, HID $205$, i$523$, Machine Learning, Analysis, e-commerce, retail, Customer Segmentation, Python, Regression, Boosting, KNN, Random Forest.}
+
+\maketitle
+
+\section{Introduction}
+The e-commerce industry is in constant shifts due to the ever-increasing changes in the technologies used to develop and maintain the e-commerce systems, the services that they are willing to offer, the market strategies which gain popularity at the time, and most importantly-  the customer behavior \cite{link1}. The online store owners are the ones who are most affected by these changes. And since the competition in the field of e-commerce is fierce, the online store owners need to come up with business strategies and technologies which provide better customer services leading to their satisfaction and earning customer loyalty. To achieve this, they need to address these ever changing issues to survive and thrive in the e-commerce market and come up with better decisions faster. The key to achieving this lies in better understanding of the customer behavior and their purchasing patterns. That is where analytics comes into play. Analysis of customer behavior and purchasing patterns helps in devising better and accurate marketing strategies which can not only help in generating more profits but also in saving both time and efforts that goes into trying and testing different marketing activities \cite{link1}. This ability to capture and analyze user data, and then provide useful and in depth insights in it is what Machine Learning empowers us with. In this project, we aim to do analysis on a data set `Online Retail' from the UC Irvine Machine Learning Repository to determine the customer purchasing pattern by using different machine Learning algorithms like K-Means Clustering, Logistic Regression, Random Forest, Gradient Boosting, etc.
+
+\section{Background}
+Before the advent of the World Wide Web, transactions that happened on a day to day basis meant physical presence of customers, the brick-and-mortar setting of a store which offered a limited variety of goods. With the evolution of internet and its application in retail, the field of e-commerce emerged and changed the entire facet of shopping. Since a proper set-up of a store is no longer needed, customers can buy goods at much lower prices, with a wider variety to choose from and that too without the need of physical presence. The online market is expected to grow by almost 56\% from the year 2015 to 2020 \cite{link2}. In the United States alone, 56\% of the population prefers to shop online. The e-commerce industry is growing at an average rate of 23\% every year, with 90\% of the Americans having done online shopping at some point in their lives \cite{link3}. With so many transactions happening over the internet, naturally the amount of data getting generated is humongous. Also, with the constantly changing market trends, strategies to overcome the competition and make profits need to be constantly improved. The key issues therefore are managing the data and drawing insights from them which will help in bettering the business decisions. To store and maintain the magnanimous amounts of data getting generated \emph{everyday} is a huge hassle, because along with the volume, this data gets generated at a break neck speed and in different formats from traditional numeric databases to unstructured text documents.   \cite{link4}. The big data technologies like Hadoop and Spark can be used in addressing these hurdles, namely the volume, velocity and variety.
+
+\subsection{The Three V's of e-Commerce Big Data}
+Like other technologies which deal with a humongous amount of data, e-Commerce must also respond to the 3 Vs, namely Volume, Velocity and Variety:
+\begin{itemize}
+    \item Volume \\
+    Thousand of online transactions happen every day making the data generation a real time process. The integration of Big Data involves collection of relevant data like customer behavior statistics on the basis of their searches, transactions, demography, etc. The challenge here is not only gathering the data but also in analyzing it.
+    \item Variety \\
+    The data from online transactions comes in different varieties, right from structured databases to unstructured text documents, videos, feedback emails and comments, and others. The retailers need to understand this for making the right business decisions by keeping a leeway for possible data fluctuations such as seasonal ad peak loads like Black Friday sales.
+    \item Velocity \\
+    Handling the huge amounts of data which is generated at unprecedented rates is another challenge that needs to be taken care of. It is therefore imperative to do rapid analysis so that timely actions can be taken to sustain in the competition and boost the profit margins \cite{link4}
+\end{itemize}
+
+Storing and maintaining the big data is a hassle in itself, but it will provide little value if proper analysis is not done on it. That is where we will be focusing on in this project - making sense of the data.\\
+We have now established the fact that the e-commerce companies have a lot of data at their fingertips. Making use of this data is where the challenge lies. Machine learning is an approach by which insights can be drawn from digital data at a rate much faster than any human is capable of doing \cite{link5} . Following are some of the biggest challenges that are faced in the field of e-commerce which Machine Learning addresses successfully:\\
+(1) Optimization of the Prices:\\
+Pricing, and in that, online pricing is critically important. Since prices of the competitors are only a few clicks away, it is far easier for the customers to compare prices. Setting up the optimum price, by considering many factors like the prices set by the competitors, the time of the day, the type of the customer and the product's demand therefore is a difficult task. Machine Learning technology can set these prices by considering all these factors at once.\\
+(2) Fraud detection: \\
+The e-commerce industry, like the other industries, is susceptible to fraudulent activities. The consequences of these activities can lead to tarnishing the name of the company forever. Machine Learning helps in detecting and preventing the frauds by processing the repetitive data at a high speed.\\
+(3) Search Ranking \\
+Machine Learning is capable of pulling information from patterns of search and purchase by considering the factors like preferences, content and search items and come up with a powerful search engine that shows what the customer exactly wants. \\
+(4) Product Recommendations \\
+Machine Learning is capable of effortlessly quantifying the buying patterns of the customers and developing a recommendation engine which makes relevant product suggestions to them. \\
+(5) Customer Segmentation and Personalization \\
+In any business, Customer base is the most important factor and therefore providing a satisfactory customer experience is of utmost importance. The biggest challenge that e-commerce systems endeavor to overcome is the separation from their customers. In person, a salesperson can quickly take in the what the customers are saying, their economic status, their body language, and behavior to help them find better or desired products. the salesperson thus is able to \emph{segment} customers, and provide them with a \emph{personalized} shopping experience. With online shopping, it is very difficult to make this happen since an in depth understanding is needed of the vast amount of the data to provide tailored choices to the customers, which can result in sale loss. \\
+Machine Learning makes the biggest impact by making it possible to give personalized customer experiences which can boost the sales and there by increase the revenue.\\ 
+The type of analysis and Machine Learning Algorithm to be chosen depends solely on the data at hand. The data set we aim to analyze is a transnational data set that has been archived in the UC Irvine Machine Learning Repository under the name `Online Retail'. This dataset contains all the transactions occurring in the period from 01/12/2010 to 09/12/2011 for a UK-based registered non-store online retail. The company mostly sells all-occasion gifts and most of its customers are wholesalers. \\
+
+A thorough Exploratory Data Analysis on this data lets us know what kind of Machine Learning Algorithm needs to be used. Also, several models can be applied and the one which gives the best accuracy and precision against the test data can be chosen. Machine Learning Algorithms are mostly classified as supervised and unsupervised Learning algorithms. In Supervised Learning, each example is a pair of an input object and the corresponding output value, also called the supervisory signal. \\
+A supervised learning algorithm analyzed the training data to produce an inferred function which is used to map new, unknown output-value examples \cite{link6}. Since there is the output value to \emph{supervise} the learning algorithm, such approach is called `Supervised Learning'. The most commonly used Supervised Learning Algorithms are Logistic and Linear Regression, Bagging and Boosting Algorithms, Decision Trees and Random Forest. The Logistic Regression algorithm determines the relationship between the input and the output variables and generates a classifier model to predict the category to which a new example belongs to. Thus Logistic Regression is a classification algorithm \cite{link7}. Decision Trees are non parametric Supervised Learning Algorithms which create a model by learning simple decision rules inferred from data attributes to predict the value of a target variable. Decision Trees can be used either for Classification or Regression \cite{link8}. Bagging is a technique used to reduce the variance in the predictions predictions by combining the result of multiple classifiers modeled on different sub-samples of the same data set. One of the most commonly and widely used implementation of Bagging is Random Forests. In Random forest, there are multiple trees which classify a new sample based on the set of attributes and a new sample is classified to that class which received the maximum `votes' from the individual trees. In case of Regression, the average of the outputs given by different trees is taken  \cite{link9}.\\
+In Unsupervised learning, only the input data is known with no knowledge of the corresponding output variable. The goal therefore of the Unsupervised Learning Algorithms is to model the underlying distribution or structure in the data to understand the data more. Since there is no output available to validate or `supervise' the answers, such learning algorithms are called Unsupervised. The most common application of unsupervised learning is clustering. Clustering enables to differentiate the data by discovering the inherent groupings of the input. The most common implementation of Clustering is the K-means algorithm. This algorithm works iteratively to assign each data point to one of the k-groups based on the feature similarity.
+
+\section{Exploring the Dataset}
+
+The dataset taken for the analysis is the Online Retail data set available on the UCI Machine Learning Repository. This is a transactional dataset which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non store online retail.The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers.\\
+
+Data set is Multivariate, Sequential , Time series with 5,41,909 rows and 8 columns.There are missing values present in the dataset.All the attributes integer and real. Size of the dataset is 43.4 MB.\\
+
+\subsection*{Attribute Information}
+
+\textbf{InvoiceNo}    : Invoice number. Nominal, a 6-digit integral number uniquely assigned to each transaction. If this code starts with letter 'c', it indicates a cancellation. \\
+\textbf{StockCode}    : Product (item) code. Nominal, a 5-digit integral number uniquely assigned to each distinct product.\\
+\textbf{Description}  : Product (item) name. Nominal. \\
+\textbf{Quantity}     : The quantities of each product (item) per transaction. Numeric.\\
+\textbf{InvoiceDate}  : Invoice Date and time. Numeric, the day and time when each transaction was generated. \\
+\textbf{UnitPrice}    : Unit price. Numeric, Product price per unit in sterling. \\
+\textbf{CustomerID}   : Customer number. Nominal, a 5-digit integral number uniquely assigned to each customer.\\
+\textbf{Country}      : Country name. Nominal, the name of the country where each customer resides.\\
+
+\section{Data Preparation}
+
+\subsection*{Installation Steps}
+We have implemented this project in Python 2.7and have used the Jupyter Notebook App for the program execution. The Jupyter Notebook App is an application having server-client architecture which allows editing and executing notebook documents through a web browser. A notebook document is a human readable and machine executable document which can be executed for implementation of data analysis. The Jupyter Notebook App can be executed on the local host or can be installed on a remote machine accessed via the internet \cite{link15}. \\
+The Jupyter Notebook can be installed very easily on a machine which has either Python $2$ or Python $3$. Since we have implemented our project in Python 2.7, following commands are to be run in the terminal:\\
+pip install --upgrade pip \\
+The above command will upgrade the Python package manager (pip).
+pip install jupyter \\
+The above command will install Jupyter in the local machine.\\
+Once the Jupyter Notebook has been installed, it can be run using the following command in the terminal:\\
+jupyter notebook\\
+This command will run the Jupyter notebook in the default browser of the machine on the default port $8888$ of the localhost.
+
+\subsection{Packages Installation}
+Before running the code the following packages were imported/installed in the Python environment.
+
+\begin{itemize}
+    \item pandas
+    Pandas provide a very fast and flexible data structures to make working with relational data easy and fairly intuitive
+    \item numpy
+    This is a fundamental package for scientific computation with Python and can be used as an efficient multi-dimensional container of generic data
+    \item sklearn
+    Scikit-learn makes a wide range of supervised and unsupervised machine learning algorithms  available in python
+\end{itemize}
+
+
+\subsection*{Null Value Treatment}
+
+The dataset has almost 25\% of the entries that are not assigned to any of the customer i.e. CustomerID attribute for those entries is null. These entries are useless for the analysis and hence can be deleted. After removing these entries , the dataset will be left with 4,06,829 rows.\\
+
+The content of the dataset appear as shown in the figure \ref{data}.
+
+\begin{figure}[h]
+\caption{Data set Contents}
+\label{data}
+\centering
+\includegraphics[width=0.5\textwidth]{images/DatasetContent.PNG}
+\end{figure}
+
+We can also remove the duplicate values present in our dataset. There are 5225 such entries present in our data set that are deleted.\\
+
+\section{Exploring the content of variables}
+
+The dataframe has 8 variables and we can draw some inferences by analyzing these variables.
+
+\subsection*{Countries}
+
+From data we can see that there are 37 different countries from which orders are placed. We can determine the number of orders per country by a chloropeth map.Chloropleth map uses different coloring and shading within predefined areas to indicate quantities in those areas. \\
+
+\begin{figure}[h]
+\caption{Distribution of Orders based on Countries}
+\label{country}
+\centering
+\includegraphics[width=0.5\textwidth]{images/chloropleth.PNG}
+\end{figure}
+
+The figure \ref{country} shows that maximum number of orders are placed from UK.
+
+\subsection*{Customers and products}
+
+On observing the number of users, products purchased and number of transaction made , we can see that these are not proportional. Which shows that there are many transactions made for cancelling the orders.\\
+
+\begin{figure}[h]
+\caption{Customer Products Transactions}
+\label{2.1}
+\centering
+\includegraphics[width=0.5\textwidth]{images/2_1.PNG}
+\end{figure}
+
+We can also determine the number of products purchased in each transaction. It shows that some customers make bulk transactions whereas some purchase single product in a transaction.
+Also the orders with InvoiceNo starting with C are the cancelled orders.
+
+\begin{figure}[h]
+\caption{Number of products per Customer}
+\label{2.2}
+\centering
+\includegraphics[width=0.5\textwidth]{images/2_2.PNG}
+\end{figure}
+
+\subsection*{Cancelled Orders}
+
+Almost 16\%(3654) of the transactions are corresponding to the cancelled orders. In our dataset, corresponding to each cancelled transaction we should have an order placed with same quantity of product requested. Checking the same in our dataset we found this for some of the orders.\\
+
+\begin{figure}[h]
+\caption{Transactions for Cancellation}
+\label{2.3}
+\centering
+\includegraphics[width=0.5\textwidth]{images/2_3.PNG}
+\end{figure}
+
+This hypothesis should apply to complete dataset, but on checking the whole dataset it is determined that there are some cancelled orders without the previous order made. This is done by locating the entries that indicate a negative quantity and check if there is an order indicating the same quantity (but positive) with the same description.To check it we have also eliminated the 'Discount' entries.\\
+
+This can be because the buy orders were performed before December 2010 ( the point of entry of the database). We can delete the records where a cancel order exists without or there is atleast one counterpart with the exact quantity (since both records are logically cancelling each other).Total 8795 such records are deleted from the dataset.\\
+
+\subsection*{StockCode}
+
+The StockCode variable should ideally contain letters. So we have filtered out the codes with only letters. We can observe the different type of transactions based on these(example D is for discounted transaction)\\
+
+\begin{figure}[h]
+\caption{Stock Codes}
+\label{2.4}
+\centering
+\includegraphics[width=0.5\textwidth]{images/2_4.PNG}
+\end{figure}
+
+\subsection*{Basket Price}
+
+We have added a new variable to indicate total price of the purchase(by multiplying unit price with quantity). On grouping the records based on the orders we can see the complete price for that order.\\
+
+\begin{figure}[h]
+\caption{Basket Price}
+\label{2.5}
+\centering
+\includegraphics[width=0.5\textwidth]{images/2_5.PNG}
+\end{figure}
+
+We can visualize the orders distinguished on the basis of total price of the basket. It can be shown using a pie-chart.
+
+\begin{figure}[h]
+\caption{Pie-Chart}
+\label{2.6}
+\centering
+\includegraphics[width=0.5\textwidth]{images/2_6.PNG}
+\end{figure}
+
+It shows that majority of the orders are the bulk purchases since 60\% of the orders have amount greater than 200.
+
+\section{Exploring Product Categories}
+
+The dataset contain two variables Stockcode and Description defining products. we can categorize the products based on the content of the description variable. This can be done in the following way :\\
+
+\begin{itemize}
+  \item Extracting the proper names appearing in the products description.
+  \item Finding the root of the word combining set of names associated with this root.
+  \item Finding the frequency of root in the dataframe.
+ \end{itemize}
+ 
+ We found that there are 1483 keywords present in the description variable of the dataset. The most common keywords can be determined based on the occurrences. The figure \ref{3.1} shows the top word occurrences.
+ 
+ \begin{figure}[h]
+\caption{Word Occurrences}
+\label{3.1}
+\centering
+\includegraphics[width=0.5\textwidth]{images/3_1.PNG}
+\end{figure}
+
+\subsection*{Categorizing Products}
+
+We have obtained around 1400 keywords from the above occurrence list , most of them are not making sense. After discarding the keywords that are appearing less than 13 times, we are left with 193 keywords that we are considering for our analysis.\\
+
+These significant keywords are used for creating categories of the products. The data has been encoded using the principle of one-hot-encoding.\\
+
+\textbf{One hot encoding} - One hot encoding is a process by which categorical variables are converted into a form that could be provided to ML algorithms to do a better job in prediction.The words present in the descriptions of the products are encoded. Also price range column is added as it will help in balanced grouping of the products.\\
+
+\subsection*{Clustering of products}
+
+In the previous step we have created a matrix with encoded version of words present in the description variable.K means clustering is used for the cluster assignment and since the data is binary because of encoding the most appropriate distance function will be Hamming's metric ( other distance functions use are euclidean distance , Manhattan distance etc.). It basically measures the minimum number of substitutions required to change one string into the other. But the kmeans package available in sklearn uses Euclidean distance by default we have used it for our analysis.\\
+
+\underline{Selection of optimum K-value}\\
+
+The number of clusters can be selected using silhouette analysis on KMeans clustering. It is used to study the separation distance between the resulting clusters. The silhouette plot displays a measure of how close each point in one cluster is to points in the neighboring clusters and thus provides a way to assess parameters like number of clusters visually.This measure has a range of [-1, 1].\\
+Silhouette coefficients (as these values are referred to as) near +1 indicate that the sample is far away from the neighboring clusters. A value of 0 indicates that the sample is on or very close to the decision boundary between two neighboring clusters and negative values indicate that those samples might have been assigned to the wrong cluster.\\
+
+The figure \ref{3.2} show silhouette score for different values of k.These scores don't have significant difference, but since for k value greater than 5 resulting in clusters with very few elements, we have taken k as 5. 
+
+\begin{figure}[h]
+\caption{Silhouette Scores}
+\label{3.2}
+\centering
+\includegraphics[width=0.5\textwidth]{images/3_2.PNG}
+\end{figure}
+
+\subsection*{Validating Quality of Classification}
+
+\subsubsection*{Silhouette  Score}
+
+From the silhouette plot we can see that cluster 1 has more number of elements than the other clusters. But overall distribution of elements in the clusters is comparative. Same can be seen from the figure \ref{3.4}.
+
+\begin{figure}[h]
+\caption{Silhouette plot}
+\label{3.3}
+\centering
+\includegraphics[width=0.5\textwidth]{images/3_3.PNG}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Cluster Composition}
+\label{3.4}
+\centering
+\includegraphics[width=0.5\textwidth]{images/3_4.PNG}
+\end{figure}
+
+\subsubsection*{Principal Component Analysis}
+
+The main idea of principal component analysis (PCA) is to reduce the dimensionality of a data set consisting of many variables correlated with each other, either heavily or lightly, while retaining the variation present in the dataset, up to the maximum extent. The initial matrix has large number of varibales so PCA is used for dimensionality reduction. From the figure we can say that we need more than 100 components to explain 90\% of the variance of the data.\\
+
+\begin{figure}[h]
+\caption{PCA}
+\label{3.5}
+\centering
+\includegraphics[width=0.5\textwidth]{images/3_5.PNG}
+\end{figure}
+
+Another application of PCA is that it sets the indication of “cluster” membership.Biplot is the best example that can be provided here to support this idea. Using biplot, we get the indication of number of clusters in a dataset. Below figure \ref{3.6} shows these on limited number of components( since it is only for visualizing cluster distribution). We can observe the groupings of points or clusters as expected.\\
+
+\begin{figure}[h]
+\caption{Biplot}
+\label{3.6}
+\centering
+\includegraphics[width=0.5\textwidth]{images/3_6.PNG}
+\end{figure}
+
+\section{Exploring Customer Categories}
+
+
+In the previous section, we have divided products in 5 clusters. We have added a dummy variable categ\_product to indicate the cluster to which that customer belongs. Based on the clustering done on products we have created variables categ\_0..4 which stores amount spent on each of the product category. And the categ\_product variable which we have just created will have initial cluster assignment based on these variables. These can be further grouped on the basis of InvoiceNo.\\
+
+\begin{figure}[h]
+\caption{Table}
+\label{4.1}
+\centering
+\includegraphics[width=0.5\textwidth]{images/4_1.PNG}
+\end{figure}
+
+
+\subsection{Subsetting dataframe based on Time}
+
+
+We have taken 12 month's data for the analysis. This can be done on the basis of variable InvoiceDate present in the dataset. Using this data we have developed a model to characterize and anticipate the habits of customers using the site and we are doing it from the first visit.\\
+
+In the previous section we have seen the basket price of each invoices. For further analysis we will combine these on the basis of CustomerID to analyze the number of purchases made by each customer.A customer category of particular interest is that of customers who make only one purchase. So one objective may be, for example, to target these customers in order to retain them. In our dataset we have 1/3 of the customers like this.
+
+\begin{figure}[h]
+\caption{Number of Purchase}
+\label{4.2}
+\centering
+\includegraphics[width=0.5\textwidth]{images/4_2.PNG}
+\end{figure}
+
+
+\subsection{Categorizing Customers}
+
+The information transactions per user is used for characterizing different types of customers.Because of different ranges of variations of different variables we have first scaled the data set.As done in the case of product categorization , we have again used K means algorithm for cluster assignment.\\
+
+Using the silhoutte score, the optimum value of k comes out to be 11. The assignment of customers into different clusters is shown in figure \ref{4.3}
+
+\begin{figure}[h]
+\caption{Number of Purchase}
+\label{4.3}
+\centering
+\includegraphics[width=0.5\textwidth]{images/4_3.PNG}
+\end{figure}
+
+Now we will check validity of the cluster assignment using PCA and Silhoutte plot as done in the case of product categorization.\\
+
+\subsubsection*{PCA}
+
+There is a certain disparity in the sizes of different groups that have been created.So we have validated it using PCA. From the representation, it can be seen, for example, that the first principal component allow to separate the tiniest clusters from the rest. More generally, we see that there is always a representation in which two clusters will appear to be distinct.\\
+
+
+\begin{figure}[h]
+\caption{PCA}
+\label{4.4}
+\centering
+\includegraphics[width=0.5\textwidth]{images/4_4.PNG}
+\end{figure}
+
+\subsubsection*{Silhoutte Plot}
+
+As with product categories, another way to look at the quality of the separation is to look at silouhette scores within different clusters:\\
+
+\begin{figure}[h]
+\caption{Silhoutte Plot}
+\label{4.5}
+\centering
+\includegraphics[width=0.5\textwidth]{images/4_5.PNG}
+\end{figure}
+
+We can see that the different clusters are indeed disjoint.
+
+\section{classification Algorithms}
+
+\subsection{Classification of Customers}
+
+
+In the previous section, we have made different client categories. In this part we will adjust a classifier so that the consumers can be classified in different client categories. The main aim of this is to enable the Classification on the first visit of the customer. To do this, we have defined a class that will allow interfacing the common functionalities to the different classifiers. Since we are going to classify the client on the basis of his/her first visit, the only parameters that we take into consideration are the contents of the basket and not the frequency of visits or the variation in the basket price over a period of time. Once this is done, we have split the dataset into train and test sets. The classification algorithms which we used to do this are mentioned below.
+
+\subsection{Logistic Regression}
+Logistic Regression as mentioned before is a Supervised Learning method which does analysis on a dataset containing two or more independent variables for determining the outcome. This outcome, i.e the dependent variable, is binary in nature, meaning it can have only two possible outcomes. The goal of a Logistic Regression model is to determine a fitting model which best describes the relationship between the dependent variables (output variable) and a set of the input independent variables. Logistic Regression generates the coefficients along with the standard errors and significance levels of the below equation for predicting the logit transformation of the probability of presence of the characteristics of interest in a given sample example. \\
+
+$logit(p) = \beta_0 + \beta_1X_1 + \beta_2X_2 +\beta_3X_3 + \beta_4X_4 + .... + \beta_kX_k$
+
+where p is the probability of the presence of a characteristic of interest.
+and $logit(p) = log(p/1-p)$
+In logistic Regression, the goal is to choose the parameters $\beta$ in such a way that the likelihood of observing the new sample values is maximized.\\
+In the Python code, we have imported the module `linear\_model' from the package `sklearn' package to perform Logistic Regression by using the function `logistic\_regression'. While performing Logistic Regression, we created an instance of the Class\_Fit class and then ran the model on training data and see how the predictions are made as compared to the real values. The learning curve graph is as shown in Fig 20.
+
+\begin{figure}[h]
+\caption{Logistic Regression Learning Curve}
+\label{5.1}
+\centering
+\includegraphics[width=0.5\textwidth]{images/5_1.png}
+\end{figure}
+
+As we can see from the Fig 20, when the number of training examples increases the cross-validation and train curves almost converge towards the same limit suggesting that the model has low variance. Thus we can say that model is not suffering from over-fitting. also one point to note is that the accuracy is high, which means that the model has low bias, thus suggesting that it does not under-fit the data. The precision which we got from running the Logistic Regression model on the training data is 88.78\%.
+
+\subsection{K Nearest Neighbours}
+KNN is a non parametric algorithm which means that there are no underlying assumptions that are made on the data. Also it is a lazy learning algorithm meaning that it does not do any generalization by using the training data. All the training data is needed during the testing phase.\cite{link11}\\
+KNN makes predictions using the training dataset directly. Predictions are made for a new instance (x) by searching through the entire training set for the K most similar instances (the neighbors) and summarizing the output variable for those K instances. For regression this might be the mean output variable, in classification this might be the mode (or most common) class value. To elaborate on this, KNN makes predictions using the training dataset directly. These predictions are made for a new sample by going through the entire training set to find k such samples which are most similar or which are the `neighbours' of the the new instance. Once these k instances are found out, the output variable corresponding to these is summarized and in case of Classification, it gives a class value to which the new instance belongs. The k `neighbours', i.e., the most similar instances from the data set are found by using he distance measure- k such instances whose distance from the new instance is the least. There are many distance functions which can be used, the most popular being the Eucledian distance function, the formula for which is given by:
+
+$EuclideanDistance(x, x_i) = sqrt( sum( (x_j-x_ii)^2 ) )$
+
+where x is a new data point and $x_i$ is an already existing point.\\
+The optimum value of K can be found by algorithm tuning, i.e. running the algorithm over several values of k and finding out and then figuring out for which k the algorithm gives the best results \cite{link12}.\\
+The output, i.e the class of the new sample can be calculated as the class which has the highest frequency from the k neighbours. Thus, each of the instances votes for their own class and the class which gets the maximum votes is taken as the prediction value \cite{link12}. \\
+In Python, the `neighbors' library is imported from the sklearn package which performs the KNN classification through the Kneighborsclassifiers function. Once the model is run, we have drawn the learning curve graph which is as represented in the Fig 21. 
+
+\begin{figure}[h]
+\caption{KNN Learning Curve}
+\label{5.2}
+\centering
+\includegraphics[width=0.5\textwidth]{images/5_2.png}
+\end{figure}
+
+\subsection{Random Forest} 
+As the name suggests, Random Forest is an ensemble classifier which consists of many classification trees. An ensemble classifier is multiple classifier algorithms, decisiion trees in the case of Random Forests, and the final output is the combined output of the all the classifier algorithms. In our case we will be using Random Forest Algorithm for classification of the clients into different categories. A Random Forest grows many trees. For classifying a new object from an input vector, each tree in the forest gives a classification and vote for a particular class. And the forest then chooses the class having maximum number of votes over the other classes \cite{link13}.\\
+The question here that needs to be addressed is, how does the growth of a tree happen?\\
+Each tree is grown as follows:\\
+If the training set consists of N cases, then sample N cases with replacement from the original data. This will be the training set for growing a tree. Thereafter, a number m<<M which is the number of input variables is taken such that the best split obtained on these m is used to split the node. The value of m is constant throughout the forest growing. Each tree is allowed to grow to the fullest possible extension \cite{link13}.
+In Python, the `ensemble' library is imported from the sklearn package which performs the Random Forest classification through the RandomForestlassifier function. The parameters given to this function are criterion, n\_estimators and max\_features. The criterion is used to measure the quality of the split. The Gini is for measuring the Gini impurity and Entropy is for information gain. The max\_features are the number of the features that can be chosen when looking for the best split. For sqrt, the number of maximum features chosen are square root of the number of the features and for log, it is log of the number of the features. And the n\_estimators is the number of trees in the forest.Once the model is run, we have drawn the learning curve graph which is as represented in the Fig 21.
+
+\begin{figure}[h]
+\caption{Random Forest Learning Curve}
+\label{5.3}
+\centering
+\includegraphics[width=0.5\textwidth]{images/5_3.png}
+\end{figure}
+
+\subsection{Gradient Boosting Classifier}
+AdaBoost Classifier, short for Adaptive Classifier is another example of ensemble classifier. 
+It is a general ensemble method which creates a strong classifier by combining the outputs of the weaker learning algorithms into a weighted sum to finally provide the output of the boosted classifier. This is done by building one model from the training set and then building a second one which attempts to rectify the errors from the first model and son on until either the limit of maximum models that can be added is reached or the training set is predicted accurately. AdaBoost is an adaptive algorithm, meaning that the weak learning algorithm can be tweaked to create a stronger classifier. \\
+The Adaptive Boosting algorithm was recast into a statistical framework. ``Arcing is an acronym for Adaptive Reweighting and Combining. Each step in an arcing algorithm consists of a weighted minimization followed by a recomputation of [the classifiers] and [weighted input] \cite{link15}''
+This framework is called as Gradient Boosting. \\
+Gradient Boosting involves three elements namely:
+\begin{itemize}
+ \item{A loss function to be optimized}
+ The selection of the loss function depends on the problem at hand. For example if it is a regression algorithm, then squared loss functions are used and if it is a classification algorithm then logarithmic functions are used.
+ \item{A weak learner for making predictions}
+ Regression trees are used as the weak learners in the Gradient Boosting Algorithm since they can output real values for splits which can be added together and the residuals in the predictions can be corrected. These trees are constructed in a greedy manner usually up to 4-8 levels.
+ \item{An additive model to add weak learners to minimize the loss functions}
+ The trees are added one at a time with no changes to the existing trees in the model. A gradient descent model is used to reduce the loss when adding trees first by parameterizing the tree and then by modifying the parameters of the tree and moving in the right direction by reducing the loss in residuals. This approach is called Functional Gradient descent.
+\end{itemize}
+
+This framework was further developed by Friedman and called Gradient Boosting Machines. Later called just gradient boosting or gradient tree boosting.
+
+\begin{figure}[h]
+\caption{Gradient Boosting Learning Curve}
+\label{5.3}
+\centering
+\includegraphics[width=0.5\textwidth]{images/5_4.png}
+\end{figure}
+
+Now that we have the results of all the models, we can combine them using VotingClassifier method that we imported from the sklearn package to improve the classification model. Since we have already found the best parameters for each of the classifiers, we have adjusted the parameters of the classifiers accordingly. So now the best parameters are taken and merged to define a classifier which  we then trained on the data. When we created a prediction on this, we got the precision value as 90.44\%.
+
+\section{Testing the predictions}
+Until now we have done all the analysis on the data form the first 10 months. After this we test the model on the set\_test dataframe which contains the data of the last two months. The regrouping of the data is done according to the same procedure that we followed while regrouping the training data. but now we have to take into consideration the time difference in between the two datasets and the count(the total number of visits the client made) and sum(total amount that he/she spent) variables so that we have an equivalence in between the training set and testing set. The dataframe so obtained is now converted to a matrix and we retained only those variables to which the clients belonged. And as the training dataset was normalized, the same method is called on the test set as well.\\
+Each row of the matrix obtained now represents the buying habits of the customers.Now all we have to do is to define the category to which the customer belongs by using these habits. The important point to note here is that this is just the test data preparation step by defining the category to which the consumer belongs for a period of two months through the variables count, min, max and sum. Thus this step \emph{does not} correspond to the classification step itself. The classifier that we defined in the step 5 uses variables that were defined from the client's first purchase.\\
+So now, we have the data available for two months, and through that we can define the category to which the consumer belongs. The predictions now obtained by running the classifiers on test data can be tested against these categories. The instance of the k-means clustering method that we used in Section 4 is used to define the category to which a client belongs. This contains the predict method which will calculate the distance of the consumers from the centroids of the 11 categories that we deduced and the category which is closest to the clients' buying habits will define his/her category. Thus all we need after this for the execution of the classifier is to select the variables on which it acts, i.e. on mean, cat\_0, cat\_1, cat\_2, cat\_3 and cat\_4. After examining the predictions of the different classifiers, we get precision scores as follows:\\ 
+\begin{center}
+ \begin{tabular}{|c | c|} 
+ \hline
+ Algorithm & Precision(\%) \\ [0.5ex] 
+ \hline
+ Logistic Regression & 72.99\\ 
+ \hline
+ KNN & 68.44 \\
+ \hline
+ Random Forest & 75.93 \\
+ \hline
+ Gradient boosting & 75.74 \\
+ \hline
+ 
+\end{tabular}
+\end{center}
+
+And now, like we did in the Section 5, we will use the voting classifier method to merge the results obtained by these individual classifiers and see whether they combined result is better than the individual. IT turns out that it is. We get the precision rate for the combined classifier to be 76.48\%. This concludes the analysis phase.\\
+
+\section{Conclusion}
+E-commerce is one of the emerging fields for Data Analysis since a lot of data gets generated every day at a break-neck speed in many different formats. To sustain in such a business, a very robust and extensive data analysis is needed to keep up with the ever changing markets by implementing different marketing strategies. We have tried to achieve Customer Segmentation on the basis of the purchasing patterns and frequency of client visits to their online portal. The dataset on which we performed analysis provided details on the purchases made by the consumers over a period of more than a year. Every entry in the dataset contained the purchase of a particular product on a given data by a particular customer. I  of the 591909 entries made in the dataset, approximately 4000 different consumers are present. From the information available for each consumer, we decided to go ahead with Customer Segmentation analysis by developing a classifier that predicted the type of purchase a consumer would make and his/her frequency of visits to the e-commerce website. \\
+In the first step of this classification, we found out the different products sold by the company, and then classified the products into 5 categories of goods by using K-means clustering. In the second step we we performed the classification of the customers on the basis of purchasing habits in the first 10 months. The customers were classified into 11 categories on the basis of the types of products they usually bought, the number of visits they made to the website and the amount for which they shopped over a period f 10 months. Once we had the categories of the the consumers, we trained several classifiers namely Logistic Regression, Random forests, KNN and Gradient Boosting algorithms to classify the consumers in these 11 categories, on the basis of their first purchase. The classifiers were based on these variables: the total price of the current purchase and the percentage of the amount spent in each of the 5 product categories. Once the customers were classified in the 11 categories, the quality of the data set was tested on the remaining two months of the dataset. This was achieved in two steps. In the first step, we assigned the category to which each customer belonged to, and then the classifier predictions were compared against these categories. And then we combined the results of the various classifiers by using the Voting Classifier method. The model performed with a 76.48\% of precision, that is 76.48\% of the times the clients were awarded the right classes.\\
+The model performs with an accuracy of 75\% times, which is a fairly good number. One bis which we did not consider while doing the analysis is the seasonal fluctuations, like festive and seasonal sales. Since at these times the sales of products rises and just before and after the sale duration, the sales may drop. Thus the purchasing habits of customers are dependent on the time of the year as well. Hence the seasonal effects may cause the actual sales in the last two months to be quite different from the ones which we extrapolated to the last two months. For overcoming such biases, it would be beneficial if the data were of a larger size and covered a larger period of time.
+
+
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
