@@ -114,7 +114,7 @@ Before going ahead with Data Exploration, a quick look through the data showed m
 Missing value treatment can be done by deleting the columns and/or rows which have missing values beyond a decided threshold, or replacing them with the attribute mean, median or mode. 
 Since the missing values in our case is the customerID, the replacement method cannot be applied. Also, these entries are useless for the analysis since we aim to do Customer Segmentation and without knowing the customerID, it cannot be achieved. Hence we have deleted the rows with missing customerID. After removing these entries , the dataset left is with 4,06,829 transactions.\\
 
-The content of the dataset appears as shown in the figure \ref{data}.
+The content of the dataset appears as shown in the Figure \ref{data}.
 
 \begin{figure}[H]
 \caption{Data set Contents}
@@ -140,7 +140,7 @@ From the data we can see that there are 37 different countries from which orders
 \includegraphics[width=\columnwidth]{images/chloropleth.PNG}
 \end{figure}
 
-The figure \ref{country} shows that maximum number of orders are placed from UK.
+The Figure \ref{country} shows that maximum number of orders are placed from UK.
 
 \subsection{Customers and products}
 
@@ -220,7 +220,7 @@ The dataset contains two variables- Stockcode and Description defining products.
   \item Finding the frequency of root in the dataframe.
  \end{itemize}
  
- We found that there are 1483 keywords present in the description variable of the dataset. The most common keywords can be determined based on the occurrences. The figure \ref{3.1} shows the top word occurrences.
+ We found that there are 1483 keywords present in the description variable of the dataset. The most common keywords can be determined based on the occurrences. The Figure \ref{3.1} shows the top word occurrences.
  
  \begin{figure}[H]
 \caption{Word Occurrences}
@@ -246,7 +246,7 @@ In the previous step we have created a matrix with encoded version of words pres
 The number of clusters can be selected using silhouette analysis on K-means clustering. It is used to study the separation distance between the resulting clusters. The silhouette plot displays a measure of how close each point in one cluster is to the points in the neighboring clusters and thus provides a way to assess parameters like number of clusters visually. This measure has a range of [-1, 1].\\
 Silhouette coefficients (as these values are referred to) near +1 indicate that the sample is far away from the neighboring clusters. A value of 0 indicates that the sample is on or very close to the decision boundary between two neighboring clusters and negative values indicate that those samples might have been assigned to the wrong cluster.\\
 
-The figure \ref{3.2} shows silhouette score for different values of k. These scores do not have significant differences, but since for k value greater than 5, the resulting clusters have very few elements in them, we have taken k as 5. 
+The Figure \ref{3.2} shows silhouette score for different values of k. These scores do not have significant differences, but since for k value greater than 5, the resulting clusters have very few elements in them, we have taken k as 5. 
 
 \begin{figure}[H]
 \caption{Silhouette Scores}
@@ -259,7 +259,7 @@ The figure \ref{3.2} shows silhouette score for different values of k. These sco
 
 \subsubsection{\textbf{Silhouette Score}}
 
-From the silhouette plot we can see that cluster 1 has more number of elements than the other clusters. But overall distribution of elements in the clusters is comparative. Same can be seen from the figure \ref{3.4}.
+From the silhouette plot we can see that cluster 1 has more number of elements than the other clusters. But overall distribution of elements in the clusters is comparative. Same can be seen from the Figure \ref{3.4}.
 
 \begin{figure}[H]
 \caption{Silhouette plot}
@@ -277,7 +277,7 @@ From the silhouette plot we can see that cluster 1 has more number of elements t
 
 \subsubsection{\textbf{Principal Component Analysis}}
 
-The main idea of principal component analysis (PCA) is to reduce the dimensionality of a data set consisting of many variables correlated with each other, either heavily or lightly, while retaining the variation present in the dataset, up to the maximum extent. The initial matrix has large number of variables and hence, PCA is used for dimensionality reduction. From the figure we can say that we need more than 100 components to explain 90\% of the variance in the data.\\
+The main idea of principal component analysis (PCA) is to reduce the dimensionality of a data set consisting of many variables correlated with each other, either heavily or lightly, while retaining the variation present in the dataset, up to the maximum extent. The initial matrix has large number of variables and hence, PCA is used for dimensionality reduction. From the Figure\ref{3.5} we can say that we need more than 100 components to explain 90\% of the variance in the data.\\
 
 \begin{figure}[H]
 \caption{PCA}
@@ -286,7 +286,7 @@ The main idea of principal component analysis (PCA) is to reduce the dimensional
 \includegraphics[width=\columnwidth]{images/3_5.PNG}
 \end{figure}
 
-Another application of PCA is that it sets the indication of “cluster” membership. Biplot is the best example that can be provided here to support this idea. Using biplot, we get the indication of number of clusters in a dataset. Below figure \ref{3.6} shows these on limited number of components (since it is only for visualizing cluster distribution). We can observe the groupings of points or clusters as expected.\\
+Another application of PCA is that it sets the indication of “cluster” membership. Biplot is the best example that can be provided here to support this idea. Using biplot, we get the indication of number of clusters in a dataset. Below Figure \ref{3.6} shows these on limited number of components (since it is only for visualizing cluster distribution). We can observe the groupings of points or clusters as expected.\\
 
 \begin{figure}[H]
 \caption{Biplot}
@@ -327,7 +327,7 @@ In the previous section we have seen the basket price of each invoices. For furt
 
 The information transactions per user is used for characterizing different types of customers. Because of different ranges of variations of different variables we have first scaled the data set. As done in the case of product categorization, we have again used K-means algorithm for cluster assignment.\\
 
-Using the silhouette score, the optimum value of k comes out to be 11. The assignment of customers into different clusters is shown in figure \ref{4.3}
+Using the silhouette score, the optimum value of k comes out to be 11. The assignment of customers into different clusters is shown in Figure \ref{4.3}
 
 \begin{figure}[H]
 \caption{Number of Purchase}
@@ -400,7 +400,7 @@ In the Python code, we have imported the module `linear\_model' from the `sklear
 \includegraphics[width=\columnwidth]{images/5_1.png}
 \end{figure}
 
-As we can see from the figure \ref{5.1}, when the number of training examples increases, the cross-validation and train curves almost converge towards the same limit suggesting that the model has low variance. Thus we can say that model is not suffering from over-fitting. Also one point to note is that the accuracy is high, which means that the model has low bias, thus suggesting that it does not under-fit the data. The precision which we got from running the Logistic Regression model on the training data is 88.78\%.
+As we can see from the Figure \ref{5.1}, when the number of training examples increases, the cross-validation and train curves almost converge towards the same limit suggesting that the model has low variance. Thus we can say that model is not suffering from over-fitting. Also one point to note is that the accuracy is high, which means that the model has low bias, thus suggesting that it does not under-fit the data. The precision which we got from running the Logistic Regression model on the training data is 88.78\%.
 
 \subsection{K Nearest Neighbours}
 KNN is a non parametric algorithm which means that there are no underlying assumptions that are made on the data. Also it is a lazy learning algorithm meaning that it does not do any generalization by using the training data. All the training data is needed during the testing phase \cite{link11}.\\
