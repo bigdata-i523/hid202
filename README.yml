@@ -27,6 +27,7 @@ paper1:
     type: latex
     url: https://github.com/bigdata-i523/hid202/paper1/paper1.pdf
 paper2:
+    exclude: True
     review: Nov 6 2017
     abstract: >
               Data Visualization is the term used for knowing the visual context
