@@ -1,0 +1,193 @@
+
+
+%\input{format/i523}
+
+
+\title{Visualization in Big Data}
+
+
+\author{Himani Bhatt}
+\affiliation{%
+  \institution{Indiana University}
+  \city{Bloomington} 
+  \state{Indiana} 
+}
+\email{himbhatt@iu.edu}
+
+
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{H. Bhatt}
+
+
+
+\begin{abstract}
+Data Visualization is the term used for knowing the visual context of data in order to understand its significance. How to unravel the strands of big data to pick out the relevant parts. If we have multiple sources of data how do we know where to look. Data visualization is the solution to all these questions. It helps to convert information into knowledge. Businesses are using big data in order to better understand their customers and to optimize their business processes. In order to find the meaning, tell the story and sharing the story, visualization is needed where data meets design.
+\end{abstract}
+
+\keywords{ HID $202$, i$523$, BI(Business Intelligence), DV(Data Visualization).}
+
+\maketitle
+
+\section{Introduction} 
+
+Data visualization is emerging as an important fusion of graphics, scientific visualization, database and human-computer interaction. Data visualization if properly aligned can provide a shorter route for decision making and a way of conveying critical information. For the data visualization to be truly productive, it has to be interactive, meaningful, understandable, user friendly and approachable. The main advantage of data visualization is that it provide insights into complex data sets by communicating their key aspects \cite{Intro01}.Not only insights, it allows users to see different perspective of the data, offers ability to note exceptions in the data, equips users with ability to see influences that would be difficult to find otherwise, helps users finding nuances that are significant \cite{Intro02}. \\
+
+According to Friedman (2008) the ``main goal of data visualization is to communicate information clearly and effectively through graphical means. It doesn't mean that data visualization needs to look boring to be functional or extremely sophisticated to look beautiful. To convey ideas effectively, both aesthetic form and functionality need to go hand in hand, providing insights into a rather sparse and complex data set by communicating its key-aspects in a more intuitive way. Yet designers often fail to achieve a balance between form and function, creating gorgeous data visualizations which fail to serve their main purpose $-$ to communicate information'' \cite{Intro03}.\\
+
+Simple form of data visualization include graphs, pi charts, histograms, scatter plots, and maps. Colors can be used to show correlation, size to show quantity, and orientations can be used to show trends. Design is used to better communicate varied sorts of information, processes, hierarchy, anamoly and analogy. Figures  \ref{bar} to \ref{heat} shows basic type of visualization diagrams which are used to give us important insights on  big data. Following is the use of all diagrams. Barchart is used for comparison of variables against single variable, as shown in Figure \ref{bar}. Histogram shows frequency of score occurrences in a continuous data set that has been divided into classes, called bins. It is shown in Figure \ref{hist}. Scatter plot shown in Figure \ref{scatter} is used to show correlation between two variables. And 3D Scatter plot is used to show correlation between three variables , as shown in Figure \ref{scatter3D}. Networks, shown in Figure \ref{network}, are used for finding clusters in the network, discovering bridges in the network, in determining most influential nodes and in finding outliers who are out of periphery of network. A Gantt Chart is used as a project management tool to illustrate how the project will run. We can view individual tasks, their duration and the sequencing of these tasks , shown in Figure \ref{gantt}. The advantages of using a Gantt chart is that it helps us to monitor the progress of our project and to set priorities. Treemaps, shown in Figure \ref{tree} are ideal for displaying large amounts of hierarchically structured (tree-structured) data. Stream graphs are used to show changes of different categories over time when there are many categories and these categories start and stop at different times , it is shown in Figure \ref{stream}. Heat Map, shown in Figure \ref{heat} is a two-dimensional representation of data in which values are represented by colors.
+
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/Tips-day-barchart.pdf}
+      \caption{Barchart \cite{Viz}}
+      \label{bar}
+\end{figure}
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/Housingprice.png}
+      \caption{Histogram \cite{Viz}}
+      \label{hist}
+    \end{figure}
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/Scatterplot5.pdf}
+      \caption{Scatter plot \cite{Viz}}
+      \label{scatter}
+      \end{figure}
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/Scatter_plot.jpg}
+      \caption{3D Scatter Plot \cite{Viz}}
+      \label{scatter3D}
+\end{figure}
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/Social_Network_Analysis_Visualization.png}
+      \caption{Networks \cite{Viz}}
+      \label{network}
+
+\end{figure}
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/GanttChart.png}
+      \caption{Gantt Chart \cite{Viz}}
+      \label{gantt}
+\end{figure}
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/Treemap.png}
+      \caption{Treemaps \cite{Viz}}
+      \label{tree}
+\end{figure}
+    
+\begin{figure}[ht]  
+      \includegraphics[width=\columnwidth]{images/Streamgraph.png}
+      \caption{Stream graph \cite{Viz}}
+      \label{stream}
+\end{figure}
+
+\begin{figure}[ht]
+      \includegraphics[width=\columnwidth]{images/Heatmap.png}
+      \caption{Heat map \cite{Viz}}
+      \label{heat}
+\end{figure}
+
+\section{Big Data Visualization Vs Other Visualization}
+
+Big Data visualization involves the presentation of data of almost any type in a graphical format that makes it easy to understand and interpret. But it goes far beyond typical corporate graphs, histograms and pie charts to more complex representations like heat maps and fever charts, enabling decision makers to explore data sets to identify correlations or unexpected patterns. In case of big data, simple business tools such as pie charts or histograms may not be able to reveal the whole story. With large, numerous and diverse data sets more esoteric visualization techniques will be more appropriate, examples includes 2D/Planar/geospatial like Cartograms, dot distribution maps, proportional symbol maps, contour maps; 3D/Volumetric visualizations like 3D computer models, computer simulations; temporal like timelines, time series charts, connected scatter plots, arc diagrams, circumplex charts; Tree/hierarchical like Dendograms, radial tree charts and hyperbolic tree charts \cite{extend}.
+
+\section{Data Visualization tools used by Data Scientists}
+
+There are some good open source data visualization tools available in the market. Some of them are :
+
+\subsection{D3.js}
+
+D3.js is a javascript library written by Mike Bostock and is used to create custom visualizations on the web and is open source. It takes advantage of already established web technologies like canvas, SVG. With the advancements in browser technology, it is now possible to render complex visualizations on variety of devices. The setup of machines involves 3 steps - Text Editor, Browser and a Web Server (which will be used to deliver content over the internet). For using D3.js some basic web development skill is required that include knowledge of HTML, CSS, JavaScript and SVG.
+D3.js can be used to make visualizations loaded with animations and interactivity. D3 is often used with Crossfilter for quick data manipulation of big data. But since it has tools for manipulating and laying out data in pure javascript, it naturally limits what we can do with javascript in memory (in the browser or in node) \cite{D3}.\\
+
+
+\subsection{Google Data Studio}
+
+Data Studio which is an open source tool can be used to create meaningful, shareable visualizations with few clicks. It provides - visual editor to create reports and dashboards, rich library of vizualizations, fully custom design and style controls, reusable templates, dynamic and interactive report controls based on various dimensions available in data, and seamless integration between data analysis and reporting. But Google's Data Studio visualization toolset focuses primarily on connecting up data from Google sources, such as Google Analytics, Google AdWords, Google Sheets, and BigQuery. However it will soon roll out connectors for SQL databases. We can even import big data like facebook data, but the information need to be present in Google Sheet so that it can be pulled into a Google Data Studio \cite{Google}. \\
+
+\subsection{Microsoft Excel Power Tools}
+
+Latest version of Excel has wide range of power tools that can be used to analyze and visualize business data. Power Pivot can import and manage millions of data rows for multiple sources. Power Query is another data analysis power tool that can be used for extracting data from a massive range of data sources, to clean and transform that data, that uses the inbuilt JSON parser to build massive data visualizations over Big Data analysis. Power View is an interactive visualization tool used to provide a drag-and-drop interface for rapid model building. It allows updating visualizations on-the-fly and shows data hierarchies allowing to drill down through data. Power Map enables us to plot and visualize data in  three-dimensions. It can plot millions of rows of data across a three-dimensional map, using data taken directly from a table, or using a data model \cite{Excel}.
+
+\subsection{MATLAB}
+
+The latest version of MATLAB, the numeric computing environment and fourth-generation language, offers new capabilities that allow for the analysis of big data. MATLAB now has built-in MapReduce functionality to allow for analysis of data sets that are too big to fit in memory. Algorithms can be developed on a desktop and then executed on a Hadoop cluster. MATLAB includes all the graphics features required to visualize engineering and scientific data, which includes 2D plots as well as 3D plots. There are functions for plotting topological data, an image data, for 3D volume visualization, for producing animations, and for plotting 3D objects. Sound can also be visualized using MATLAB \cite{MATLAB}.
+
+\subsection{Mathematica}
+
+Mathematica is used to make high quality automated data visualization with the help of unified architecture. It provides static and dynamic visualization that scales from immediate one-off projects to fully automated industrial-scale production systems. It	offers a powerful suite	of data	analysis and data mining packages, along with a	very rich data visualization framework for its users. Mathematica has its own graphics language,	with which graphics	primitives can be interactively	rendered inside	the	worksheet. This makes Mathematicas	capability similar to many widely used visualization languages.	Mathematica	provides a plethora	of functions to	combine	these primitives and make them interactive. Along with basic plots, it can be used for time series and scientific visualization, statistic and text visualization, map visualization \cite{Mathematica}.\\
+
+\subsection{R Programming Language }
+
+R has built in functions and libraries to build visualizations and present data. Charts like scatter plot, histogram, Bar and stack bar chart, box plot, area chart, heat map, correlogram can be made using the library ggplot2. Package heatmaply is used for easily creating interactive cluster heatmaps that can be shared online as a stand-alone HTML file. R package named iplots enhances the interactivity of the graphs. This package provides interactive mosaic plots, bar plots, box plots, parallel plots, scatter plots, and histograms that can be linked together and color brushed. The major advantage of using these is R can be used by anyone and is open source \cite{R}.
+
+\subsection{Python}
+
+Python comes with a wide range of prebuilt libraries focused on big data processing, visualization, and other data manipulations. Python has multiple libraries that can be practically used for every data visualization need. Matplotlib is a top-notch piece of software which is making Python (with some help of NumPy, SciPy, and Pandas) a cognizant competitor to such scientific tools as MatLab or Mathematica. It can be used to make line plot, scatter plot, bar chart, pie chart, stem plot, contour plot, quiver plots, spectograms. Another library Seaborn is mostly focused on the visualization of statistical models; such visualizations include heat maps, those that summarize the data but still depict the overall distributions. Seaborn is based on Matplotlib and highly dependent on that. Bokeh is another library which is aimed at interactive visualizations and is independent of Matplotlib. Also it makes its presentation via modern browsers in the style of Data-Driven Documents (d3.js). The library Plotly is rather a web-based toolbox for building visualizations, exposing APIs to some programming languages (Python among them). In order to use Plotly, we need to set up your API key \cite{Python}. 
+
+\section{Commercial Data Visualization Tools}
+
+Visualization solutions are rapidly evolving. Some of the most popular and innovative data visualization tools are : 
+\subsection{Tableau}
+
+Tableau is a data visualization tool created by Tableau Software. Tableau’s data visualization is considered to be more interactive than the ones provided by the general BI solutions. The huge and fast changing datasets used in big data operations, artificial intelligence and machine learning can be handled efficiently because of the integration of tableau with various advance database solutions like Teradata, SAP, Amazon AWS, Hadoop. Tableau offers 5 main products: Tableau Desktop,Tableau Server, Tableau Online, Tableau Reader, Tableau Public \cite{Tableau}.\\
+
+\subsection{Qlikview}
+
+Qlikview is the business discovery platform. It offers powerful business intelligence, analytics and enterprise reporting capabilities other than the data visualization capabilities. It has a clean and clutter free user interface. It is used with Qliksense, which is responsible for data exploration and discovery. Dynamic calculation is the major innovation in Qlikview. It generate new views of information as the users clicks or taps, and instantly responds with the newly calculated set of data and visualizations \cite{Qlikview}.
+
+\subsection{Spotfire}
+
+Tibco spotfire is the tool used for business intelligence. It is used by predictive analytics professionals to make imperative decisions. It has a library that helps in transferring analysis that has occurred by hard practices from an expert to business user. It not only increase the speed of decision making but also delivers framework for circulation of analysis applications, that depends on the needs of an association. It also make access to the server based data sources easy, since it has its own analytics servers centrally coped information facilities. It has self configuring visual data analysis environment that helps users to explore, visualize and query data in real time \cite{Spotfire}.
+
+\subsection{MS BI Stack}
+
+Microsoft BI Stack provides all the tools we need to build, manage and use a BI solution, as part of Microsoft SQL Server, Sharepoint and Office applications. Visual studio 2015 can be used to get business insights on a platform that is designed to work with the data, systems and tools. For the enterprises using Microsoft technologies, Microsoft BI stack seems to be the most logical extension. Microsoft has products for data integration(SSIS), analytics(SSAS), business intelligence(SSRS), and visualization. These tools can be used as a stand alone tool or it can be integrated with sharepoint system or MS office desktop products(like Excel) \cite{MS}.
+
+\subsection{IBM Cognos Analytics }
+
+Cognos Analytics addresses the need for autonomous analytics for business users by allowing them self service analytics.It allows business users to upload and analyze data within an enterprise environment. It has an intuitive web-based interface, so desktop applications, report reader applications, additional browser plugins need not be maintained. Reports can also be authored on mobile devices without having to compromise with security. It is also available on the cloud as a service. Even if we are not sure about the tables to be used for pulling data to build a particular report, IBM's Watson will use meta data from tables and column names of that type of report, to figure out what we might need to use \cite{cognos}. 
+
+\subsection{SAP Lumira}
+
+SAP Lumira is the advancement of SAP tool Visual Intelligence. It enables business users to access, transform and visualize data of any size. It allows self service analytics. We can visualize any amount of data in real time using SAP HANA and simple deployment to mobile devices. It allows to import data from excel and multiple other sources, performing visual BI analytics using intuitive dashboards, and securely sharing insights and data stories. One of the powerful element of Lumira is Infographics. Users can prepare data themselves without using code or scripts and thus reducing IT time and cost \cite{SAP}.
+
+
+
+\section{Challenges of Big Data Visualization}
+
+Big Data visualization can be an extremely powerful business capability, but before an organization can take advantage of it some key issues need to be addressed :\\
+
+\begin{description}
+ \item[Availability of visualization specialists] - Many Big Data visualization tools are designed to be easy enough for anyone in an organization to use, but to get most out of some tools it may be necessary to employ a specialist in big data visualization techniques who can select the best data sets and visualization styles depending on the type of data to ensure the data is exploited to the maximum.
+\item[Visualization hardware resources]- Big Data visualization is essentially a computing task, and the ability to carry out this task quickly and to enable organizations to make decisions in a timely manner using real-time data will require powerful computer hardware, fast storage systems, or even a move to cloud.
+\item[Data quality] - The insights drawn from Big Data visualization highly rely on the authenticity of the data. Thus corporate data, metadata, data sources, and any transformations or data cleaning that are performed before storage need to be done properly \cite{extend}.
+
+\end{description}
+
+
+
+\section{Conclusion}
+
+
+Designing an efficient and effective data visualization application is a complex process. Also good visualization requires customization. This process involves representing the data of interest, processing the data to extract relevant information for the problem at hand, designing a mapping of this information to a visual representation, rendering this representation, and combining all this functionality in an easy-to-use application. Visualization is taking an advantage of the fact that we humans are programmed to understand the world around us on the basis of what we see. So it should tell a story with a subject, a function and a desired output.\\
+
+For big data, visualization can provide insights that leads to better data, and in turn to better visualizations. This positive loop can be considered as a core of complex and interactive data visualization and both end products keep on refining with each iteration. 
+
+
+\begin{acks}
+
+  The author would like to thank Dr. Gregor von Laszewski and the Assistant Instructors for their feedback and help.
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report} 
+
+
+
